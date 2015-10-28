@@ -4,6 +4,12 @@ tag="2.1.0"
 
 FILEDIR=`pwd`
 
+<<<<<<< HEAD
+port_mapping="-p 50070:50070 -p 8088:8088"
+
+
+=======
+>>>>>>> f232f678ef191caae703de7c2dbad2f66e4260fd
 function resize_cluster() {
 	echo -e "[**Info]: Resizing Cluster Nodes to: \033[31m"$1"\033[0m"
 	# Modify hadoop config file "slaves" and hbase file "regionservers" and "hbase-site.xml"
@@ -41,7 +47,11 @@ function stop_container() {
 function start_container() {
 	# delete old master container and start new master container
 	echo "[**Info]: Starting master container..."
+<<<<<<< HEAD
+	docker run -d -t --dns 127.0.0.1 -P --name master -h master -v $FILEDIR/conf/hadoop/:/usr/local/hadoop/etc/hadoop/ -v $FILEDIR/conf/hbase/:/usr/local/hbase/conf/ -w /root $port_mapping leon1110/hadoop-node:$tag &> /dev/null
+=======
 	docker run -d -t --dns 127.0.0.1 -P --name master -h master -v $FILEDIR/conf/hadoop/:/usr/local/hadoop/etc/hadoop/ -v $FILEDIR/conf/hbase/:/usr/local/hbase/conf/ -w /root leon1110/hadoop-node:$tag &> /dev/null
+>>>>>>> f232f678ef191caae703de7c2dbad2f66e4260fd
 
 	# get the IP address of master container
 	FIRST_IP=$(docker inspect --format="{{.NetworkSettings.IPAddress}}" master)
