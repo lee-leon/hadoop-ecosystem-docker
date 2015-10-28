@@ -8,10 +8,10 @@ export HADOOP_CONF_DIR=$HADOOP_INSTALL/etc/hadoop
 export YARN_HOME=$HADOOP_INSTALL
 export YARN_CONF_DIR=$HADOOP_INSTALL/etc/hadoop
 
-export HBASE_HOME=/usr/local/hbase-1.1.2
+export HBASE_HOME=/usr/local/hbase
 
-export SCALA_HOME=/usr/local/scala-2.12.0
+export SCALA_HOME=/usr/local/scala
 
-export SPARK_HOME=/usr/local/spark-1.5.1
+export SPARK_HOME=/usr/local/spark
 
 export PATH=$PATH:$HADOOP_INSTALL/bin:$HADOOP_INSTALL/sbin:$HBASE_HOME/bin:$SPARK_HOME/bin:$SCALA_HOME/bin  

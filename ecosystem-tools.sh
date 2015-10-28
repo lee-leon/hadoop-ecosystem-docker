@@ -4,19 +4,19 @@ tag="2.1.0"
 
 FILEDIR=`pwd`
 
-port_mapping="-p 50070:50070 -p 8088:8088"
+port_mapping="-p 50070:50070 -p 8088:8088 -p 8080:8080"
 
 function resize_cluster() {
 	echo -e "[**Info]: Resizing Cluster Nodes to: \033[31m"$1"\033[0m"
 	# Modify hadoop config file "slaves" and hbase file "regionservers" and "hbase-site.xml"
 	zk_value="master"
-	echo "master" > $FILEDIR/conf/hadoop/slaves
 	echo "master" > $FILEDIR/conf/hbase/regionservers
 	i=1
 	while [ $i -lt $1 ]
 	do
 		echo "slave$i" >> $FILEDIR/conf/hadoop/slaves
 		echo "slave$i" >> $FILEDIR/conf/hbase/regionservers
+		echo "slave$i" >> $FILEDIR/conf/spark/slaves
 		zk_value=`echo $zk_value","slave$i`
 		((i++))
 	done
@@ -43,7 +43,7 @@ function stop_container() {
 function start_container() {
 	# delete old master container and start new master container
 	echo "[**Info]: Starting master container..."
-	docker run -d -t --dns 127.0.0.1 -P --name master -h master -v $FILEDIR/conf/hadoop/:/usr/local/hadoop/etc/hadoop/ -v $FILEDIR/conf/hbase/:/usr/local/hbase/conf/ -w /root $port_mapping leon1110/hadoop-node:$tag &> /dev/null
+	docker run -d -t --dns 127.0.0.1 -P --name master -h master -v $FILEDIR/conf/hadoop/:/usr/local/hadoop/etc/hadoop/ -v $FILEDIR/conf/hbase/:/usr/local/hbase/conf/ -v $FILEDIR/conf/spark/:/usr/local/spark/conf/ -w /root $port_mapping leon1110/hadoop-node:$tag &> /dev/null
 
 	# get the IP address of master container
 	FIRST_IP=$(docker inspect --format="{{.NetworkSettings.IPAddress}}" master)
@@ -53,7 +53,7 @@ function start_container() {
 	while [ $i -lt $1 ]
 	do
 		echo "[**Info]: starting slave$i container..."
-		docker run -d -t --dns 127.0.0.1 -P --name slave$i -h slave$i -v $FILEDIR/conf/hadoop/:/usr/local/hadoop/etc/hadoop/ -v $FILEDIR/conf/hbase/:/usr/local/hbase/conf/ -e JOIN_IP=$FIRST_IP leon1110/hadoop-node:$tag &> /dev/null
+		docker run -d -t --dns 127.0.0.1 -P --name slave$i -h slave$i -v $FILEDIR/conf/hadoop/:/usr/local/hadoop/etc/hadoop/ -v $FILEDIR/conf/hbase/:/usr/local/hbase/conf/ -v $FILEDIR/conf/spark/:/usr/local/spark/conf/ -e JOIN_IP=$FIRST_IP leon1110/hadoop-node:$tag &> /dev/null
 		((i++))
 	done 
 }
