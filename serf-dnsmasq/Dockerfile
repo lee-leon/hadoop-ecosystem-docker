@@ -4,7 +4,7 @@ FROM ubuntu:15.04
 MAINTAINER Leon Lee <lee.leon0519@gmail.com>
 
 RUN apt-get update && \
-apt-get install -y unzip curl dnsmasq net-tools iputils-ping vim
+apt-get install -y unzip curl dnsmasq net-tools vim
 
 # dnsmasq configuration 
 ADD dnsmasq/* /etc/

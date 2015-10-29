@@ -20,6 +20,7 @@ ADD files/hadoop-2.5.2.tar.gz /usr/local
 ADD files/hbase-1.1.2-bin.tar.gz /usr/local
 ADD files/scala-2.12.0-M3.tgz /usr/local
 ADD files/spark-1.5.1-bin-hadoop2.4.tgz /usr/local
+ADD files/pig-0.15.0.tar.gz /usr/local
 
 
 # Export to system environment path			
@@ -41,4 +42,5 @@ RUN ln -s /usr/local/hadoop-2.5.2 /usr/local/hadoop && \
 ln -s /usr/local/hbase-1.1.2 /usr/local/hbase && \ 
 ln -s /usr/local/scala-2.12.0-M3 /usr/local/scala && \ 
 ln -s /usr/local/spark-1.5.1-bin-hadoop2.4 /usr/local/spark && \ 
+ln -s /usr/local/pig-0.15.0 /usr/local/pig && \ 
 mv /usr/local/bashrc ~/.bashrc

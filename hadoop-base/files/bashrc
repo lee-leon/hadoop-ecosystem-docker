@@ -14,4 +14,6 @@ export SCALA_HOME=/usr/local/scala
 
 export SPARK_HOME=/usr/local/spark
 
-export PATH=$PATH:$HADOOP_INSTALL/bin:$HADOOP_INSTALL/sbin:$HBASE_HOME/bin:$SPARK_HOME/bin:$SCALA_HOME/bin  
+export PIG_HOME=/usr/local/pig
+
+export PATH=$PATH:$HADOOP_INSTALL/bin:$HADOOP_INSTALL/sbin:$HBASE_HOME/bin:$SPARK_HOME/bin:$SCALA_HOME/bin:$PIG_HOME/bin  

@@ -10,7 +10,9 @@ function resize_cluster() {
 	echo -e "[**Info]: Resizing Cluster Nodes to: \033[31m"$1"\033[0m"
 	# Modify hadoop config file "slaves" and hbase file "regionservers" and "hbase-site.xml"
 	zk_value="master"
+	echo -e "\c" > $FILEDIR/conf/hadoop/slaves
 	echo "master" > $FILEDIR/conf/hbase/regionservers
+	echo -e "\c" > $FILEDIR/conf/spark/slaves
 	i=1
 	while [ $i -lt $1 ]
 	do
@@ -26,7 +28,7 @@ function resize_cluster() {
 
 function get_current_size() {
 	curr_size=`cat $FILEDIR/conf/hadoop/slaves | wc -l`
-#	curr_size=`awk 'BEGIN{printf "%d\n", ('$curr_size'+1)}'`
+	curr_size=`awk 'BEGIN{printf "%d\n", ('$curr_size'+1)}'`
 }
 
 

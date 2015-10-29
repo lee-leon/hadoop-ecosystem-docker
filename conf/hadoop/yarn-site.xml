@@ -20,11 +20,8 @@
   <name>yarn.resourcemanager.address</name>
   <value>master:8040</value>
 </property>
-<<<<<<< HEAD
 <property>
   <name>yarn.resourcemanager.webapp.address</name>
   <value>master:8088</value>
 </property>
-=======
->>>>>>> f232f678ef191caae703de7c2dbad2f66e4260fd
 </configuration>
