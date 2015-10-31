@@ -1,7 +1,8 @@
+﻿
 
+# <center>**Hadoop Ecosystem Docker**</center>
+<img src="http://lee-leon.github.io/images/github/logo/hadoop-ecosystem-docker-logo.jpg" width="500" height="200" alt="Script_Options"/>
 
-# **Hadoop Ecosystem Docker**
-![hadoop-ecosystem-docker-logo](http://lee-leon.github.io/images/github/logo/hadoop-ecosystem-docker-logo.jpg)
 ------
 
 
@@ -24,8 +25,11 @@ git clone https://github.com/lee-leon/hadoop-ecosystem-docker.git
 cd hadoop-ecosystem-docker
 ./ecosystem-tools.sh
 ```
+
+<img src="http://lee-leon.github.io/images/github/hadoop-ecosystem-docker/1.png" width="500" height="150" alt="Script_Options"/>
+
 **Four options are provided as following:**
-![ecosystem-tools-options-logo](http://lee-leon.github.io/images/github/hadoop-ecosystem-docker/1.png)
+
 
 Choose one to complete the deployment.
 
