@@ -1,7 +1,7 @@
 
 
 # **Hadoop Ecosystem Docker**
-![hadoop-ecosystem-docker-logo](http://lee-leon.github.io/images/github/logo/hadoop-ecosystem-docker.jpg)
+![hadoop-ecosystem-docker-logo](http://lee-leon.github.io/images/github/logo/hadoop-ecosystem-docker-logo.jpg)
 ------
 
 
@@ -50,7 +50,7 @@ Choose one to complete the deployment.
 ## **License**
 The MIT License (MIT)
 
-Copyright (c) 2015 Leon Lee <lee.leon0519@gmail.com>
+Copyright (c) 2015 Leon Lee \<lee.leon0519@gmail.com\>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
