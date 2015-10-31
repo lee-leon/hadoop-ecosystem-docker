@@ -1,7 +1,7 @@
 ﻿
 
 # <center>**Hadoop Ecosystem Docker**</center>
-<img src="http://lee-leon.github.io/images/github/logo/hadoop-ecosystem-docker-logo.jpg" width="500" height="200" alt="Script_Options"/>
+<img src="http://lee-leon.github.io/images/github/logo/hadoop-ecosystem-docker-logo.jpg" width="500" height="110" alt="Script_Options"/>
 
 ------
 
@@ -26,7 +26,7 @@ cd hadoop-ecosystem-docker
 ./ecosystem-tools.sh
 ```
 
-<img src="http://lee-leon.github.io/images/github/hadoop-ecosystem-docker/1.png" width="500" height="150" alt="Script_Options"/>
+<img src="http://lee-leon.github.io/images/github/hadoop-ecosystem-docker/1.png" width="500" height="100" alt="Script_Options"/>
 
 **Four options are provided as following:**
 
